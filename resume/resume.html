@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/main.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+  <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+</head>
+<script src="./JS/echarts.js"></script>
+<script src="./JS/jquery.min.js"></script>
+<script src="./JS/move.js"></script>
+<script>
+  $(document).ready(function() {
+    var HobbyChart = echarts.init(document.getElementById('hobby'),'light');
+    var odivs = document.getElementById('detail').getElementsByTagName('div');
+    var wechat = document.getElementById('smaWindow');
+    wechat.onmouseover = function(){
+      startMove(this,'left',0);
+    };
+    wechat.onmouseout = function()
+    {
+      startMove(this,'left',-150);
+    };
+    wechat.style.top = ((document.documentElement.clientHeight - wechat.offsetHeight)/2 + (document.documentElement.scrollTop || document.body.scrollTop)) + 'px';
+    $('#skilldetail').show(2000);
+    var option1 = {
+      series : [
+        {
+            type: 'pie',
+            radius: '80%',
+            data:[
+                {value:250, name:'游戏'},
+                {value:274, name:'音乐'},
+                {value:200, name:'小说'},
+                {value:230, name:'动漫'},
+                {value:260, name:'云养猫'},
+            ]
+        }
+    ]
+      };
+     HobbyChart.setOption(option1);
+    var SkillChart = echarts.init(document.getElementById('skill'));
+    var option2 = {
+    title : {
+        subtext: '持续更新哟~'
+    },
+    polar : [
+       {
+           indicator : [
+               { text: 'HTML', max: 100},
+               { text: 'CSS', max: 100},
+               { text: 'Javascript', max: 100},
+               { text: 'PS', max: 100},
+               { text: 'Java', max: 100},
+               { text: 'jQuery', max: 100}
+            ]
+        }
+    ],
+    calculable : true,
+    series : [
+        {
+            type: 'radar',
+            data : [
+                 {
+                    value : [90, 84, 75, 10, 70, 60],
+                    name : '技能'
+                }
+            ]
+        }
+    ]
+};
+     SkillChart.setOption(option2);
+     var oul = document.getElementById('imageSet');
+     var timer= null;
+     var i = 0;
+     timer = setInterval(start,2000);
+     HobbyChart.on('mouseover',  function(params) {
+         clearInterval(timer);
+         startMove(oul,'top',parseInt(((-432*params.dataIndex)-params.dataIndex*3.5)));
+      });
+      HobbyChart.on('mouseout',  function(params) {
+            i = params.dataIndex;
+           timer = setInterval(start,2000);
+      });
+      function start()
+      {
+        i++;
+        if(i == 5)
+        {
+          i = 0;
+        }
+        startMove(oul,'top',parseInt(((-432*i)-i*3.5)));
+      }
+
+  });
+
+
+
+
+  window.onscroll = function(){
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var odiv = document.getElementById('smaWindow');
+    startMove(odiv,'top',parseInt((document.documentElement.clientHeight - odiv.offsetHeight)/2 + scrollTop));
+  };
+</script>
+<body>
+  <div class="container">
+  <div class="container">
+    <div class="intro clear-float">
+      <div class="me col-3">
+        <img src="./Image/zhao.jpg" style="margin-left:40px" alt="this is zhaoyubin">
+      </div>
+      <div class="connact col-7">
+        <ul>
+          <li><img src="./Image/6.gif" alt=""><span>招宇斌</span></li>
+          <li><img src="./Image/4.gif" alt=""><span>zhaoyubin@foxmail.com</span></li>
+          <li><img src="./Image/3.gif" alt=""><span>18718206463</span></li>
+          <li><img src="./Image/2.gif" alt=""><span>South China Agricultural University</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="describe">招小斌的爱好：</div>
+    <div class="clear-float">
+    <div id="hobby" class="col-4" style="height:432px">
+    </div>
+    <div id="detail" class="col-6">
+      <ul id="imageSet">
+        <li><img src="./Image/overwatch.jpg" alt=""></li>
+        <li><img src="./Image/coldplay.jpg" alt=""></li>
+        <li><img src="./Image/book.jpg" alt=""></li>
+        <li><img src="./Image/onepiece.jpeg" alt=""></li>
+        <li><img src="./Image/cat.jpg" alt=""></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  </div>
+  <div class="container clear-float">
+    <div class="describe">招小斌的技能加点：</div>
+    <div id="skill" style="width:400px;height:400px;float:left;margin:20px"></div>
+    <div id="skilldetail" class="skilldetail col-5" style="display:none">
+      <ul>
+        <li>HTML的话标签什么的我觉得自己记忆得还算OK，但是HTML5里面的新特性还在理解当中，特别是canvas,这个既炫酷又好用的东西我会尽快熟练掌握。</li>
+        <li>CSS的话一般的样式我也能够掌握，合模型的话自己也理解了，但内核跟阴影动画那边不太掌握，我也一定会花时间来体会的。</li>
+        <li>（JS这个的话DOM操作我是应该没问题的。)之前我是这样写的，也给了自己的JS80分，但做完这个网页真心发现自己的水平还差得有点远...</br>PS:本来想用ajax来实现这个div的导入，但是发现不OK,查了一下好像是谷歌不支持file跨域。</li>
+        <li>jQuery这个我正在学，暂时来说的话还没遇到什么困难，嘛，我会继续努力的。</li>
+        <li>PS...这个，其实我只会一些很简单的处理，，切切图什么的。。。</li>
+        <li>Java的话我学校有专门的必修课程，在大二学习过了，基本操作应该也没什么问题。</li>
+        <li>其他前端技术我也正在争取在最短时间内跟上进度，目前的话正在学习Vue.js框架。剩下的例如react,Argular,Node,啊啊，必须马不停蹄呢~</li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="container" style="height:400px">
+    <div class="describe">招小斌的自我评价：</div>
+    <ul id="self-assessment">
+      <li>本人是华南农业大学大三在校生一名，专业是计算机科学与技术。</li>
+      <li>个性外向乐观，有点二，有点宅，乐于与别人交际沟通，自学能力较强。</li>
+      <li>呃...招小斌既没有项目经验也没有工作经验，，说起来实在很是惭愧，，倘若</br>有公司能够不介意这点的话，，我一定会严格要求自己，为能给公司带来</br>利益而不断努力和奋斗！</li>
+    </ul>
+    <div style="width:300px;height:150px;margin: 0 auto;margin-top: 50px;position:relative"><img src="./Image/thanks.gif" alt="" style="width:100%;padding: 0 auto;position:absolute"></div>
+  </div>
+</div>
+    <div id="smaWindow" onmouseover="startMove(0)" onmouseout="startMove(-150)">
+        <img src="./Image/wechat.png" alt="">
+	      <span>调戏小斌</span>
+    </div>
+</body>
+</html>

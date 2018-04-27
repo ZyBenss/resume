@@ -1,0 +1,164 @@
+body{
+  background-image: url('../Image/thresh.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.container{
+  max-width: 1080px;
+  display: block;
+  margin: 0 auto;
+  background-image: url('../Image/purple2.jpg');
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.clear-float:after,
+.clear-float:before{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.me,
+.connact{
+  position: relative;
+}
+
+.me img{
+  position: absolute;
+  max-width: 40%;
+  padding: 20px;
+  padding-left: 40px;
+
+}
+
+.col-3,
+.col-7,
+.col-6,
+.col-4{
+  display: block;
+  position: relative;
+  min-height: 232px;
+  float: left;
+}
+
+.col-4{
+  width:40%;
+}
+.col-6{
+  width:60%;
+}
+
+.col-7{
+    width: 70%;
+}
+.col-3{
+    width: 30%;
+}
+.connact ul{
+  padding-left: 200px;
+}
+
+.connact li{
+  list-style-type: none;
+  font-size: 20px;
+  height: 50px;
+  width: 300px;
+  color: #aaa;
+}
+.connact img{
+  float: left;
+  position: absolute;
+  max-width: 8%;
+}
+.connact span{
+ margin-left: 80px;
+ padding-top: 11px;
+ position: absolute;
+ font-family:Verdana;
+}
+.describe:before{
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-bottom: 3px;
+      vertical-align: middle;
+      background: #dd182b;
+}
+.describe{
+  font-size: 20px;
+  font-style: italic;
+  color:rgb(237, 42, 72);
+  margin-bottom: -20px;
+}
+.skilldetail{
+  display: block;
+  padding-top: 60px;
+}
+.skilldetail li{
+  margin-top: 10px;
+  font-family: Times;
+  color: #aaa;
+}
+#smaWindow {
+  width:150px;
+  height:150px;
+  background:green;
+  position:absolute;
+  left:-150px;
+}
+#smaWindow img{
+  max-width: 100%;
+}
+#smaWindow span {
+  position:absolute;
+  width:20px;
+  border-radius: 10%;
+  height:80px;
+  line-height:20px;
+  background:purple;
+  color: #bbb;
+  right:-20px;
+  top:40px;
+}
+#detail{
+  display: block;
+  overflow: hidden;
+  position: relative;
+  height: 432px;
+}
+#detail ul{
+  position: absolute;
+  margin-top: 0;
+}
+
+#detail img{
+  max-width: 100%;
+  height: 432px;
+}
+#detail li{
+  list-style-type: none;
+  float: left;
+}
+#self-assessment{
+  margin-top: 40px;
+}
+
+#self-assessment li{
+  list-style-type:circle;
+  margin-top: 10px;
+  font-size: 19px;
+  color: #aaa;
+}
+hr{
+  margin: 0 auto;
+  background-color: white;
+  width: 80%;
+  height: 2px;
+  margin-top: 10px;
+}
