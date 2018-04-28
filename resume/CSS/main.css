@@ -98,11 +98,12 @@ body{
 }
 .skilldetail{
   display: block;
-  padding-top: 60px;
+  padding-top: 25px;
 }
 .skilldetail li{
   margin-top: 10px;
   font-family: Times;
+  line-height:1.5em;
   color: #aaa;
 }
 #smaWindow {
@@ -152,6 +153,7 @@ body{
 #self-assessment li{
   list-style-type:circle;
   margin-top: 10px;
+  line-height:1.5em;
   font-size: 19px;
   color: #aaa;
 }
