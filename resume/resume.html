@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>XiaoBin's resume</title>
   <link rel="stylesheet" href="./CSS/main.css">
-  <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" />
   <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css" rel="stylesheet">
 </head>
 <script src="./JS/echarts.js"></script>
 <script src="./JS/jquery.min.js"></script>
 <script src="./JS/move.js"></script>
+<script src="./JS/vue.min.js"></script>
 <script>
   $(document).ready(function() {
     var HobbyChart = echarts.init(document.getElementById('hobby'), 'light');
@@ -169,23 +169,23 @@
       <div id="skill" style="width:400px;height:400px;float:left;margin:20px"></div>
       <div id="skilldetail" class="skilldetail col-5" style="display:none">
         <ul>
-          <li>HTML的话标签什么的我觉得自己记忆得还算OK，但是HTML5里面的新特性还在理解当中，特别是canvas,这个既炫酷又好用的东西我会尽快熟练掌握。</li>
-          <li>CSS的话一般的样式我也能够掌握，合模型的话自己也理解了，但内核跟阴影动画那边不太掌握，我也一定会花时间来体会的。</li>
-          <li>（JS这个的话DOM操作我是应该没问题的。)之前我是这样写的，也给了自己的JS80分，但做完这个网页真心发现自己的水平还差得有点远...</br>PS:本来想用ajax来实现这个ul的导入，但是发现不OK,查了一下好像是谷歌不支持file跨域。</li>
-          <li>jQuery这个我正在学，暂时来说的话还没遇到什么困难，嘛，我会继续努力的。</li>
-          <li>PS...这个，其实我只会一些很简单的处理，，切切图什么的。。。</li>
-          <li>Java的话我学校有专门的必修课程，在大二学习过了，基本操作应该也没什么问题。</li>
-          <li>其他前端技术我也正在争取在最短时间内跟上进度，目前的话正在学习Vue.js框架。剩下的例如react,Argular,Node,啊啊，必须马不停蹄呢~</li>
+          <li>{{HTML}}</li>
+          <li>{{CSS}}</li>
+          <li>{{JS}}</li>
+          <li>{{jQuery}}</li>
+          <li>{{PS}}</li>
+          <li>{{Java}}</li>
+          <li>{{Complement}}</li>
         </ul>
       </div>
     </div>
     <hr>
     <div class="container" style="height:400px">
-      <div class="describe">招小斌的自我评价：</div>
+      <div id="describe" class="describe">招小斌的自我评价：</div>
       <ul id="self-assessment">
-        <li>本人是华南农业大学大三在校生一名，专业是计算机科学与技术。</li>
-        <li>个性外向乐观，有点二，有点宅，乐于与别人交际沟通，自学能力较强。</li>
-        <li>呃...招小斌既没有项目经验也没有工作经验，，说起来实在很是惭愧，，倘若</br>有公司能够不介意这点的话，，我一定会严格要求自己，为能给公司带来</br>利益而不断努力和奋斗！</li>
+        <li>{{describe1}}</li>
+        <li>{{describe2}}</li>
+        <li>{{describe3}}</li>
       </ul>
       <div style="width:300px;height:150px;margin: 0 auto;margin-top: 25px;position:relative"><img src="./Image/thanks.gif" alt="" style="width:100%;padding: 0 auto;position:absolute"></div>
     </div>
@@ -194,6 +194,7 @@
     <img src="./Image/wechat.png" alt="">
     <span>调戏小斌</span>
   </div>
+  <script src="./JS/message.js"></script>
 </body>
 
 </html>
