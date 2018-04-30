@@ -1,4 +1,4 @@
-new Vue({
+﻿var one = new Vue({
   el:'#skilldetail',
   data:{
     HTML:"HTML的话标签什么的我觉得自己记忆得还算OK，但是HTML5里面的新特性还在理解当中，特别是canvas,这个既炫酷又好用的东西我会尽快熟练掌握。",
@@ -10,8 +10,8 @@ new Vue({
     Complement:"其他前端技术我也正在争取在最短时间内跟上进度，目前的话正在学习Vue.js框架。剩下的例如react,Argular,Node,啊啊，必须马不停蹄呢~"
   }
 });
-new Vue({
-  el:"#self-assessment",
+var two = new Vue({
+  el:'#describediv',
   data:{
     describe1:"本人是华南农业大学大三在校生一名，专业是计算机科学与技术。",
     describe2:"个性外向乐观，有点二，有点宅，乐于与别人交际沟通，自学能力较强。",
